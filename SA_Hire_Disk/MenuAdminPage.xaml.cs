@@ -68,7 +68,7 @@ namespace SA_Hire_Disk
 
         private void BtListRentDisk_Click(object sender, RoutedEventArgs e)
         {
-
+            AppData.MainFrame.Navigate(new ListHireDiskPage());
         }
 
         private void BtListUser_Click(object sender, RoutedEventArgs e)

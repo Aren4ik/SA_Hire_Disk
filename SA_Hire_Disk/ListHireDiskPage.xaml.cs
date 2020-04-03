@@ -23,6 +23,12 @@ namespace SA_Hire_Disk
         public ListHireDiskPage()
         {
             InitializeComponent();
+            DataGridHireDisk.ItemsSource = AppData.Context.HireDisks.ToList();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            DataGridHireDisk.ItemsSource = AppData.Context.HireDisks.ToList();
         }
     }
 }
