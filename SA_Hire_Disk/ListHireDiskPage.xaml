@@ -39,5 +39,14 @@
             </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <TextBlock Grid.Row="0"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10" Text="Список арендованных дисков" Cursor="No" FontWeight="Bold" FontSize="24" FontFamily="Times New Roman"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10">
+            <TextBlock  Width="120" Text="Поиск по фамилии:" FontWeight="Bold"/>
+            <TextBox TextChanged="Tbsurname_TextChanged"  Name="Tbsurname" Width="150"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+            <TextBlock  Width="195" Text="Фильтрация по названии диска:" FontWeight="Bold" />
+            <ComboBox   SelectionChanged="CbType_SelectionChanged"  Name="CbDiskName" Width="170"/>
+        </StackPanel>
     </Grid>
 </Page>

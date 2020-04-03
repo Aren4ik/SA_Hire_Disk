@@ -24,6 +24,26 @@ namespace SA_Hire_Disk
         {
             InitializeComponent();
             DataGridHireDisk.ItemsSource = AppData.Context.HireDisks.ToList();
+            CbDiskName.Items.Add("Нет фильтра");
+            CbDiskName.SelectedIndex = 0;
+            foreach (Users Type in AppData.Context.Users)
+            {
+                CbDiskName.Items.Add(Type.Role);
+            }
+        }
+        private void Filter()
+        {
+            var fil = AppData.Context.Users.ToList();
+            if (CbDiskName.SelectedIndex > 0)
+            {
+                fil = fil.Where(p => p.Role == Int32.Parse(CbDiskName.SelectedItem.ToString())).ToList();
+            }
+
+            if (Tbsurname.Text != "")
+            {
+                fil = fil.Where(p => p.Surname.ToLower().Contains(Tbsurname.Text.ToLower())).ToList();
+            }
+            DataGridHireDisk.ItemsSource = fil.ToList();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -44,6 +64,16 @@ namespace SA_Hire_Disk
             AppData.Context.Users.Remove(DataGridHireDisk.SelectedItem as Users);
             AppData.Context.SaveChanges();
             DataGridHireDisk.ItemsSource = AppData.Context.Users.ToList();
+        }
+
+        private void CbType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Filter();
+        }
+
+        private void Tbsurname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Filter();
         }
     }
 }
