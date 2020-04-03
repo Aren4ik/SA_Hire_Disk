@@ -82,6 +82,9 @@
     <Compile Include="InfoDiskPage.xaml.cs">
       <DependentUpon>InfoDiskPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ListHireDiskPage.xaml.cs">
+      <DependentUpon>ListHireDiskPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LustUserPage.xaml.cs">
       <DependentUpon>LustUserPage.xaml</DependentUpon>
     </Compile>
@@ -123,6 +126,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="InfoDiskPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListHireDiskPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
