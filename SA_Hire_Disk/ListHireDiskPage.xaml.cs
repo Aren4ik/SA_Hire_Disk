@@ -30,5 +30,20 @@ namespace SA_Hire_Disk
         {
             DataGridHireDisk.ItemsSource = AppData.Context.HireDisks.ToList();
         }
+
+        private void BtEdit_Click(object sender, RoutedEventArgs e)
+        {
+            //var rowIndex = DataGridDisk.SelectedIndex;
+            //var dataR = (Disks)DataGridDisk.SelectedItems[0];
+
+            //AppData.MainFrame.Navigate(new Add_Disk_Page(AppData.Context.Disks.Where(p => p.Id_Disk == dataR.Id_Disk).FirstOrDefault()));
+        }
+
+        private void BtDelete_Click(object sender, RoutedEventArgs e)
+        {
+            AppData.Context.Users.Remove(DataGridHireDisk.SelectedItem as Users);
+            AppData.Context.SaveChanges();
+            DataGridHireDisk.ItemsSource = AppData.Context.Users.ToList();
+        }
     }
 }

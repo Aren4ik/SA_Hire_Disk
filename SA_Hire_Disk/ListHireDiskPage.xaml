@@ -23,6 +23,20 @@
                 <DataGridTextColumn Binding="{Binding Patronymic}"  Width="*" Header="Отчество"/>
                 <DataGridTextColumn Binding="{Binding Email }" Width="*" Header="Электронная почта"/>
                 <DataGridTextColumn Binding="{Binding Phone.Name }" Width="*" Header="Телефон"/>
+                <DataGridTemplateColumn>
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button Name="BtEdit"  Content="Редактировать" Width="100" Click="BtEdit_Click"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTemplateColumn>
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button Name="BtDelete"  Content="Удалить" Width="100" Click="BtDelete_Click"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
